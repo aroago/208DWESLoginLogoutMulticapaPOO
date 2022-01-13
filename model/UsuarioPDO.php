@@ -26,19 +26,12 @@ class UsuarioPDO implements UsuarioDB{
             if(!$oUsuario){
                 return false;
             }else{
-                //Guardo la hora actual
-                $oDateTime = new DateTime();
+                //new Usuario($oUsuario->T01_CodUsuario, $oUsuario->T01_Password, $oUsuario->T01_DescUsuario, $oUsuario->T01_NumConexiones, time(), $oUsuario->T01_FechaHoraUltimaConexion, $oUsuario->T01_Perfil);
+                $oUsuario= self::registrarUltimaConexion($codUsuario);
+                 return $oUsuario;
                 
-                $consulta2 = <<<PDO
-                    UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,
-                    T01_FechaHoraUltimaConexion = '{$oDateTime->format("y-m-d h:i:s")}'
-                    WHERE T01_CodUsuario='{$codUsuario}';
-                PDO;
-                
-                DBPDO::ejecutarConsulta($consulta2);
-                
-                return $oUsuario;
             }
+           
     }
     /**
      * Dado un código de usuario, comprueba que no exista ya en la base de datos.
@@ -83,5 +76,14 @@ class UsuarioPDO implements UsuarioDB{
 
         return $oUsuario;
     }
-     
+     public static function registrarUltimaConexion($codigoUsuario){
+        $sUpdate = <<<QUERY
+            UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,
+            T01_FechaHoraUltimaConexion = unix_timestamp()
+            WHERE T01_CodUsuario='{$codigoUsuario}';
+        QUERY;
+
+        return DBPDO::ejecutarConsulta($sUpdate);
+    }
 }
+

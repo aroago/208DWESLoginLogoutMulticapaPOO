@@ -18,8 +18,9 @@ class Usuario{
             $this->codUsuario = $codUsuario;
             $this->password = $password;
             $this->descUsuario = $descUsuario;
-            $this->numAccesos = $numConexiones;
+            $this->numConexiones = $numConexiones;
             $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
+            $this->fechaHoraUltimaConexionAnterior = $fechaHoraUltimaConexionAnterior;
             $this->perfil = $perfil;
         }
 
@@ -35,13 +36,16 @@ class Usuario{
         function getFechaHoraUltimaConexion(){
             return $this->fechaHoraUltimaConexion;
         }
+        function getFechaHoraUltimaConexionAnterior(){
+            return $this->fechaHoraUltimaConexionAnterior;
+        }
         function getNumConexiones(){
             return $this->numConexiones;
         }
         function getPerfil(){
             return $this->perfil;
         }
-
+        
         function setCodUsuario($codUsuario){
            $this->codUsuario=$codUsuario; 
         }
@@ -53,6 +57,9 @@ class Usuario{
         }
         function setFechaHoraUltimaConexion($fechaHoraUltimaConexion){
             $this->fechaHoraUltimaConexion=$fechaHoraUltimaConexion;
+        }
+        function setFechaHoraUltimaConexionAnterior($fechaHoraUltimaConexionAnterior){
+            return $this->fechaHoraUltimaConexionAnterior=$fechaHoraUltimaConexionAnterior;
         }
         function setNumConexiones($numConexiones){
             $this->numConexiones=$numConexiones;

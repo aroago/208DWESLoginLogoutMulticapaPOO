@@ -11,13 +11,19 @@
         <title>Detalle</title>
         <link rel="shortcut icon" href="favicon.ico">
         <style>
+             * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
             .button{
                 width: 20%;
                 background: rgba(6, 187, 211, 0.3);
             }
         </style>
     </head>
-    <body>
+    <body id="detalle">
         <?php
         /*
          * @author: Aroa Granero Omañas
