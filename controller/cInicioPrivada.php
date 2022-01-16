@@ -12,22 +12,22 @@
     }
     
     if(isset($_REQUEST['detalle'])){
+        $_SESSION['paginaAnterior']= $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = $aControladores['detalle'];
+
         header('location: ./index.php');
         exit;
     }
     
     if(isset($_REQUEST['mtoDep'])){
+        $_SESSION['paginaAnterior']= $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = $aControladores['WIP'];
+
         header('location: ./index.php');
         exit;
     }
-    $aVInicioPrivado = [
-    'descUsuario' => $oUsuario->getDescUsuario(),
-    'numConexiones' => $oUsuario->getNumConexiones(),
-    'fechaHoraUltimaConexionAnterior' => $oUsuario->getFechaHoraUltimaConexionAnterior()
-];
-    
+
+   
     $vistaEnCurso=$aVistas['inicio'];
     include $aVistas['layout'];
 ?>

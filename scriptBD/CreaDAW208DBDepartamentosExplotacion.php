@@ -20,7 +20,7 @@ try {
                     T01_CodUsuario varchar(10) PRIMARY KEY,
                     T01_Password varchar(64) NOT NULL,
                     T01_DescUsuario varchar(255) NOT NULL,
-                    T01_NumConexiones int DEFAULT 0,
+                    T01_NumConexiones int DEFAULT 1,
                     T01_FechaHoraUltimaConexion int,
                     T01_Perfil enum('administrador', 'usuario') DEFAULT 'usuario',
                     T01_ImagenUsuario mediumblob NULL

@@ -10,18 +10,17 @@
     <h1>Programa LoginLogout</h1>
     <h2>Inicio</h2>
 </header>
-<?php if ($aVInicioPrivado['numConexiones'] <= 1) { ?>
-    <h1><?php echo "Bienvenid@ " . $aVInicioPrivado['descUsuario'] ?></h1>
+<?php if ($_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getNumConexiones() <= 1) { ?>
     <h1><?php echo "Esta es la primera vez que te conectas!" ?></h1>
     <?php
 } else {
     ?>
-    <h1><?php echo "Bienvenid@ " . $aVInicioPrivado['descUsuario'] ?></h1>
-    <h1><?php echo "Es la " . $aVInicioPrivado['numConexiones'] . "ª vez que te conectas." ?></h1>
-    <h1><?php echo "Tu ultima conexion fue el " . date('d/m/Y H:i:s', $aVInicioPrivado['fechaHoraUltimaConexionAnterior']) ?></h1>
+    <h1><?php echo "Bienvenid@ " . $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getDescUsuario() ?></h1>
+    <h1><?php echo "Es la " . $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getNumConexiones() . "ª vez que te conectas." ?></h1>
+    <h1><?php echo "Tu ultima conexion fue el " . date("d/m/Y h:i:s",$_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getFechaHoraUltimaConexion()) ?></h1>
     <?php
 }
-?>  
+?>    
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
    <input type='submit' name='mtoDep' value='Mantenimiento Departamentos'/>
     <input type='submit' name='detalle' value='Detalle'/>
