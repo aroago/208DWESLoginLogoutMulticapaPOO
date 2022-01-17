@@ -10,7 +10,6 @@ if(isset($_REQUEST['login'])){
             $oUsuario = UsuarioPDO::validarUsuario($_REQUEST["usuario"], $_REQUEST["password"]);
             if($oUsuario){
                 $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'] = $oUsuario;
-                $_SESSION['FechaHoraUltimaConexionAnterior'] = $oUsuario->T01_FechaHoraUltimaConexion;
                 
                 $_SESSION['paginaEnCurso'] = $aControladores['inicio'];
                 header('Location: index.php');
