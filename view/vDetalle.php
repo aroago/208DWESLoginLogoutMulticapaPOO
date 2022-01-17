@@ -15,6 +15,10 @@
                 width: 20%;
                 background: rgba(6, 187, 211, 0.3);
             }
+
+            body{
+                background-color: black;
+            }
         </style>
     </head>
     <body>
@@ -33,19 +37,27 @@
             <input type="submit" value="volver" name="volver" class="button"/>
         </form>
         <h1>Mostrar el contenido de las variables superglobales</h1>
-        <?php
-        echo '<h3>Mostrar el contenido de las variables superglobales:</h3>  ';
-// El contenido de $_SESSION
-        echo '<h3>Mostrar el contenido de $_SESSION :</h3>  ';
-        echo '<table><tr><th>Clave</th><th>Valor</th></th>';
-        foreach ($_SESSION as $Clave => $Valor) {
-            echo '<tr>';
-            echo "<td>$Clave</td>";
-            echo "<td>$Valor</td>";
-            echo '</tr>';
-        }
-        echo '</table>';
 
+        <table>
+            <thead>
+                <tr>
+                    <th>Clave</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($_SESSION as $clave => $valor) {
+                    echo "<tr><td>";
+                    echo $clave;
+                    echo "</td><td>";
+                    echo print_r($valor);
+                    echo "</td></tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+        <?php
 // El contenido de $_COOKIE
         echo '<h3>Mostrar el contenido de $_COOKIE :</h3>  ';
         echo '<table><tr><th>Clave</th><th>Valor</th></th>';
@@ -70,4 +82,6 @@
 
         phpinfo();
         ?>
+
+
 

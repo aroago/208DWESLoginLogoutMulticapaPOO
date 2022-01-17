@@ -10,14 +10,14 @@
     <h1>Programa LoginLogout</h1>
     <h2>Inicio</h2>
 </header>
-<?php if ($numConexiones <= 1) { ?>
+<?php if ($_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getNumConexiones() <= 1) { ?>
     <h1><?php echo "Esta es la primera vez que te conectas!" ?></h1>
     <?php
 } else {
     ?>
-    <h1><?php echo "Bienvenid@ " . $descUsuario ?></h1>
-    <h1><?php echo "Es la " . $numConexiones . "ª vez que te conectas." ?></h1>
-    <h1><?php echo "Tu ultima conexion fue el " . $_SESSION['FechaHoraUltimaConexionAnterior'] ?></h1>
+    <h1><?php echo "Bienvenid@ " . $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getDescUsuario() ?></h1>
+    <h1><?php echo "Es la " . $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getNumConexiones() . "ª vez que te conectas." ?></h1>
+    <h1><?php echo "Tu ultima conexion fue el " . date("d/m/Y h:i:s",$_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getFechaHoraUltimaConexion()) ?></h1>
     <?php
 }
 ?>    

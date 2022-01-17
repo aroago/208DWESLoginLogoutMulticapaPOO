@@ -18,8 +18,9 @@ class Usuario{
             $this->codUsuario = $codUsuario;
             $this->password = $password;
             $this->descUsuario = $descUsuario;
-            $this->numAccesos = $numConexiones;
+            $this->numConexiones = $numConexiones;
             $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
+            $this->fechaHoraUltimaConexionAnterior = $fechaHoraUltimaConexionAnterior;
             $this->perfil = $perfil;
         }
 

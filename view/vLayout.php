@@ -27,7 +27,7 @@
         ?>
         <footer class="piepagina">
             <a href="https://github.com/aroago/208DWESLoginLogoutMulticapaPOO" target="_blank"><img src="./webroot/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
-            <p><a>&copy;</a><a href="https://daw208.ieslossauces.es/">2021 Todos los derechos reservados AroaGO.</a> Fecha Modificación:09/12/2021</p> 
+            <p><a>&copy;</a><a href="https://daw208.ieslossauces.es/">2021 Todos los derechos reservados AroaGO.</a> Fecha Modificación:16/01/2022</p> 
         </footer>
     </body>
 </html>
