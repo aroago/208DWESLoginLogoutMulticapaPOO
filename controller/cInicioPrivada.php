@@ -26,7 +26,13 @@
         header('location: ./index.php');
         exit;
     }
+     if(isset($_REQUEST['error'])){
+        $_SESSION['paginaAnterior']= $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso'] = $aControladores['error'];
 
+        header('location: ./index.php');
+        exit;
+    }
    
     $vistaEnCurso=$aVistas['inicio'];
     include $aVistas['layout'];
