@@ -14,3 +14,4 @@
         <input type='submit' name='iniciar' value='Iniciar sesión'/>
     </form>
 </div>
+<div id="reloj"></div>

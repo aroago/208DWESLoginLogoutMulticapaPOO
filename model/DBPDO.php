@@ -21,8 +21,10 @@ class DBPDO implements DB{//clase para ejecucar consultas sql
             $consulta->execute($parametros); //Ejecuto la consulta con los parametros si tiene.
           
         } catch (PDOException $miExcepcionPDO) {
-            echo "<p style='color:red;'>Error " . $miExcepcionPDO->getMessage() . "</p>"; //Muestro el mensaje de la excepción de errores.
-            echo "<p style='color:red;'>Código de error " . $miExcepcionPDO->getCode() . "</p>"; //Muestro el código del error.
+            $_SESSION['paginaEnCurso'] = 'error';
+            $_SESSION['error'] = new AppError($miExcepcionPDO->getCode(), $miExcepcionPDO->getMessage(), $miExcepcionPDO->getFile(), $miExcepcionPDO->getLine(), $_SESSION['paginaAnterior']);
+            header('Location: index.php');
+            exit;
         }
         return $consulta;
     }

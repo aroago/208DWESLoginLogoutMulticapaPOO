@@ -36,12 +36,12 @@ $aControladores = [
 //Array de las vistas
 $aVistas = [
     'inicioPublica' => 'view/vInicioPublica.php',
-    'layout' => 'view/vLayout.php',
+    'layout' => 'view/layout.php',
     'login' => 'view/vLogin.php',
     'inicio' => 'view/vInicioPrivada.php',
     'detalle' => 'view/vDetalle.php',
     'WIP' => 'view/vWIP.php',
-    'error' => 'view/cError.php'
+    'error' => 'view/vError.php'
 ];
 ?>
 

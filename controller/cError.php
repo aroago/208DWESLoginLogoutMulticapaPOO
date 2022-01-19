@@ -5,10 +5,10 @@
  * @version: v1
  * Created on: 11/1/2022
  * Last modification: 11/1/2022
- **/
-if(isset($_REQUEST['volver'])){
-    $_SESSION['paginaEnCurso'] = $aControladores['inicio'];
-    header('Location: index.php');
+ * */
+if (isset($_REQUEST['volver'])) {
+    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    header('location: ./index.php');
     exit;
 }
 
@@ -17,9 +17,9 @@ $aVError = [
     'error' => $_SESSION['error']->getDescError(),
     'codigo' => $_SESSION['error']->getCodError(),
     'archivo' => $_SESSION['error']->getArchivoError(),
-    'linea' => $_SESSION['error']->getLineaError()
+    'linea' => $_SESSION['error']->getLineaError(),
+    'paginaSiguiente' => $_SESSION['error']->getPaginaSiguiente()
 ];
 
-   $vistaEnCurso=$aVistas['error'];
-    include $aVistas['layout'];
+include $aVistas['layout'];
 

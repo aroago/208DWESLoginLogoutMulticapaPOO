@@ -24,5 +24,6 @@
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
    <input type='submit' name='mtoDep' value='Mantenimiento Departamentos'/>
     <input type='submit' name='detalle' value='Detalle'/>
+    <input type='submit' name='saltarError' value='Saltar_Error'/>
     <input class="button" type="submit" name="logout" value="logout"/>
 </form>
