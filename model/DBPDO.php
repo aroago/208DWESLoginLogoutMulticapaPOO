@@ -1,9 +1,20 @@
 <?php
-/*
+/**
+ * Class DBPDO
+ *
+ * Clase para conexión con la base de datos y ejecución de consultas mediante PDO.
+ *
+ * PHP version 7.4
+ */
+
+/**
+ * Clase para conexión con la base de datos y ejecución de consultas mediante PDO.
+ * 
  * @author: Aroa Granero Omañas
- * @version: v1
- * Created on: 10/1/2022
- * Last modification: 10/1/2022
+ * @since: 21/01/2022
+ * @version: 1.0 Realizacion de DBPDO
+ * @copyright: Copyright (c) 2022, Aroa Granero Omañas
+ * 
  */
 class DBPDO implements DB{//clase para ejecucar consultas sql
 /**

@@ -2,11 +2,11 @@
 
 /*
  * @author: Aroa Granero Omañas
- * @version: v1
- * Created on: 11/1/2022
- * Last modification: 11/1/2022
+ * @since: 21/12/2021
+ * @version: 1.0 Realizacion de cDetalle
+ * @copyright: Copyright (c) 2022, Aroa Granero Omañas
+ * Controlador de detalle
  */
-
     if(isset($_REQUEST['volver'])){  
         $_SESSION['paginaEnCurso'] = 'inicio';
         header('location: ./index.php');

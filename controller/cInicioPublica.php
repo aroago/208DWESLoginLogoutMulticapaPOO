@@ -2,9 +2,10 @@
 
 /*
  * @author: Aroa Granero Omañas
- * @version: v1
- * Created on: 11/1/2022
- * Last modification: 11/1/2022
+ * @since: 21/01/2022
+ * @version: 1.0 Realizacion de cInicioPublica
+ * @copyright: Copyright (c) 2022, Aroa Granero Omañas
+ * Controlador de Inicio Publica
  */
 
 if(isset($_REQUEST['iniciar'])){

@@ -1,12 +1,26 @@
 <?php
 
-/*
+/**
+ * Clase UsuarioPDO
+ * 
+ * Conexión de usuarios con la base de datos mediante PDO.
+ * 
  * @author: Aroa Granero Omañas
  * @version: v1
- * Created on: 10/1/2022
- * Last modification: 10/1/2022
+ * @since 23/12/2021
  */
 
+/**
+ * Clase UsuarioPDO
+ * 
+ * Funciones de conexión con la base de datos para modificación de usuarios.
+ * 
+ * @author Aroa Granero Omañas
+ * @package LoginLogout
+ * @since 12/01/2022
+ * @copyright Copyright (c) 2022, Aroa Granero Omañas
+ * @version 1.0 Realizacion de UsuarioPDO
+ */
 class UsuarioPDO implements UsuarioDB {
 
     /**
@@ -78,7 +92,13 @@ class UsuarioPDO implements UsuarioDB {
 
         return $oUsuario;
     }
-
+/**
+ * Registro de una nueva conexión.
+ * 
+ * 
+ * @param Usuario $codigoUsuario
+ * @return Usuario
+ */
     public static function registrarUltimaConexion($codigoUsuario) {
         $sUpdate = <<<QUERY
             UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,
