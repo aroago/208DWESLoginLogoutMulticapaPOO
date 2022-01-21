@@ -11,12 +11,11 @@ if(isset($_REQUEST['login'])){
             if($oUsuario){
                 $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'] = $oUsuario;
                 
-                $_SESSION['paginaEnCurso'] = $aControladores['inicio'];
+                $_SESSION['paginaEnCurso'] = 'inicio';
                 header('Location: index.php');
                 exit;
             }
         }
     }
-$vistaEnCurso = $aVistas['login']; 
 require_once $aVistas['layout'];
 ?> 
