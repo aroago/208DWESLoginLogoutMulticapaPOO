@@ -12,6 +12,7 @@
  * Interfaz para conexión con la base de datos y ejecución de consultas sobre la misma.
  * 
  * @author: Aroa Granero Omañas
+ * @package LoginLogout
  * @since: 21/01/2022
  * @version: 1.0 Realizacion de DB
  * @copyright: Copyright (c) 2022, Aroa Granero Omañas

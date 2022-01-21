@@ -1,7 +1,8 @@
 <?php
 
-/*
+/**
  * @author: Aroa Granero Omañas
+ * @package LoginLogout
  * @version: v1
  * Created on: 11/1/2022
  * Last modification: 11/1/2022

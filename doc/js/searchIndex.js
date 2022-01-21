@@ -98,7 +98,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\HOST",
             "name": "HOST",
-            "summary": "",
+            "summary": "Fichero\u0020de\u0020configuracion\u0020que\u0020contiene\u0020la\u0020conexion\u0020a\u0020la\u0020base\u0020de\u0020datos\u0020PDO",
             "url": "namespaces/default.html#constant_HOST"
         },                {
             "fqsen": "\\USER",
@@ -133,7 +133,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Usuario",
             "name": "Usuario",
-            "summary": "",
+            "summary": "Clase\u0020Usuario",
             "url": "classes/Usuario.html"
         },                {
             "fqsen": "\\Usuario\u003A\u003A__construct\u0028\u0029",

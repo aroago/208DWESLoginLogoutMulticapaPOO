@@ -1,10 +1,12 @@
 <?php
 
-/*
+/**
  * Fichero de configuracion que contiene la conexion a la base de datos PDO
- * @author Aroa Granero Omañas
- * Fecha Creacion:  05/11/2021
- * Última modificación: 19/11/2021
+ * @author: Aroa Granero Omañas
+ * @package LoginLogout
+ * @version: v1
+ * Created on: 11/1/2022
+ * Last modification: 11/1/2022
  */
 
 //ENTORNO EXPLOTACION CLASE

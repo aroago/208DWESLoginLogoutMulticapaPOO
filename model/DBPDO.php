@@ -11,6 +11,7 @@
  * Clase para conexión con la base de datos y ejecución de consultas mediante PDO.
  * 
  * @author: Aroa Granero Omañas
+ * @package LoginLogout
  * @since: 21/01/2022
  * @version: 1.0 Realizacion de DBPDO
  * @copyright: Copyright (c) 2022, Aroa Granero Omañas
@@ -19,9 +20,9 @@
 class DBPDO implements DB{//clase para ejecucar consultas sql
 /**
  * function que ejecuta las sentencias sql y devuelbe el resultado. En php
- * @param type $sentenciaSQL recibe la sentencia sql.
- * @param type $parametros recice los parametros necesarios para la sentencia.
- * @return type* devuelve el resultado de la consulta
+ * @param String $sentenciaSQL recibe la sentencia sql.
+ * @param Array|null $parametros recice los parametros necesarios para la sentencia.
+ * @return PDOStatement devuelve el resultado de la consulta
  */
     public static function ejecutarConsulta($sentenciaSQL, $parametros=null) {
         try {

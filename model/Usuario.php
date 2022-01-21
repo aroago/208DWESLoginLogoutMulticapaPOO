@@ -1,7 +1,18 @@
 <?php
+/**
+ * Clase Usuario
+ *
+ * Fichero con la clase Usuario que nos servira para crear un objeto Usuario
+ *
+ * PHP version 7.4
+ */
 
-/*
+/**
+ * 
+ * Clase Usuario
+ * 
  * @author: Aroa Granero Omañas
+ * @package LoginLogout
  * @version: v1
  * Created on: 10/1/2022
  * Last modification: 11/1/2022
