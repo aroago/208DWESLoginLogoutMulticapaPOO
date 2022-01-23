@@ -23,7 +23,7 @@ try {
                     T01_NumConexiones int DEFAULT 1,
                     T01_FechaHoraUltimaConexion int,
                     T01_Perfil enum('administrador', 'usuario') DEFAULT 'usuario',
-                    T01_ImagenUsuario mediumblob NULL
+                    T01_ImagenUsuario varchar(255) DEFAULT 'webroot/img/imagenUsuarios/default.jpg'
                 )engine=innodb;
                 CREATE TABLE IF NOT EXISTS T02_Departamento(
                     T02_CodDepartamento varchar(3) PRIMARY KEY,

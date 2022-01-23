@@ -1,11 +1,4 @@
 <?php
-/*
- * @author: Aroa Granero Omañas
- * @since: 21/01/2022
- * @version: 1.0 Realizacion de cInicioPrivada
- * @copyright: Copyright (c) 2022, Aroa Granero Omañas
- * Controlador de Inicio Privada
- */
 
 if (!isset($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'])) {
     header('location: ./index.php');

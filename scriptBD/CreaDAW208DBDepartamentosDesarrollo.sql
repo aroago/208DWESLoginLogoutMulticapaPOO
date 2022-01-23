@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS DB208DWESProyectoTema5.T01_Usuario(
     T01_NumConexiones int DEFAULT 1,
     T01_FechaHoraUltimaConexion int,
     T01_Perfil enum('administrador', 'usuario') DEFAULT 'usuario',
-    T01_ImagenUsuario mediumblob NULL
+    T01_ImagenUsuario varchar(255) DEFAULT 'webroot/img/imagenUsuarios/default.jpg'
 )engine=innodb;
 
 -- CREAR Tabla T02_Departamento dentro de la base de datos DB207DWESProyectoTema5

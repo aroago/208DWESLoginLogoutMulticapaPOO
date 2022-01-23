@@ -1,26 +1,12 @@
 <?php
 
-/**
- * Clase UsuarioPDO
- * 
- * Conexión de usuarios con la base de datos mediante PDO.
- * 
+/*
  * @author: Aroa Granero Omañas
  * @version: v1
- * @since 23/12/2021
+ * Created on: 10/1/2022
+ * Last modification: 10/1/2022
  */
 
-/**
- * Clase UsuarioPDO
- * 
- * Funciones de conexión con la base de datos para modificación de usuarios.
- * 
- * @author Aroa Granero Omañas
- * @package LoginLogout
- * @since 12/01/2022
- * @copyright Copyright (c) 2022, Aroa Granero Omañas
- * @version 1.0 Realizacion de UsuarioPDO
- */
 class UsuarioPDO implements UsuarioDB {
 
     /**
@@ -43,8 +29,7 @@ class UsuarioPDO implements UsuarioDB {
         if (!$oUsuario) {
             return false;
         } else {
-            self::registrarUltimaConexion($codUsuario);
-            return new Usuario($oUsuario->T01_CodUsuario, $oUsuario->T01_Password, $oUsuario->T01_DescUsuario, $oUsuario->T01_NumConexiones, $oUsuario->T01_FechaHoraUltimaConexion, null, $oUsuario->T01_Perfil);
+            return new Usuario($oUsuario->T01_CodUsuario, $oUsuario->T01_Password, $oUsuario->T01_DescUsuario, $oUsuario->T01_NumConexiones, $oUsuario->T01_FechaHoraUltimaConexion, null, $oUsuario->T01_Perfil, $oUsuario->T01_ImagenUsuario);
         }
     }
 
@@ -55,15 +40,16 @@ class UsuarioPDO implements UsuarioDB {
      */
     public static function validarCodNoExiste($codUsuario) {
         $usuarioNoExiste = true;
-
+        
         $consulta = "Select * from T01_Usuario where T01_CodUsuario=?";
-        $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
-
+        $resultado = DBPDO::ejecutarConsulta($consulta,[$codUsuario]);
+        
         if ($resultado->rowCount() > 0) {
             $usuarioNoExiste = false;
         }
-
+        
         return $usuarioNoExiste;
+       
     }
 
     /**
@@ -76,29 +62,17 @@ class UsuarioPDO implements UsuarioDB {
      */
     public static function altaUsuario($codUsuario, $password, $descripcion) {
         $oUsuario = null;
-
+        
         $consulta = "Insert into T01_Usuario (T01_CodUsuario, T01_DescUsuario, T01_Password , T01_NumConexiones, T01_FechaHoraUltimaConexion) values (?,?,?,1,?)";
         $passwordEncriptado = hash("sha256", ($codUsuario . $password));
-        $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario, $descripcion, $passwordEncriptado, time()]);
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$codUsuario, $descripcion, $passwordEncriptado, time()]);
 
-
-        $consultaDatosUsuario = "Select * from T01_Usuario where T01_CodUsuario=?";
-        $resultadoDatosUsuario = DBPDO::ejecutaConsulta($consultaDatosUsuario, [$codUsuario]);
-
-        if ($resultadoDatosUsuario->rowCount() > 0) {
-            $oUsuarioConsulta = $resultadoDatosUsuario->fetchObject();
-            $oUsuario = new Usuario($oUsuarioConsulta->T01_CodUsuario, $oUsuarioConsulta->T01_Password, $oUsuarioConsulta->T01_DescUsuario, $oUsuarioConsulta->T01_NumConexiones, $oUsuarioConsulta->T01_FechaHoraUltimaConexion, $oUsuarioConsulta->T01_Perfil, $oUsuarioConsulta->T01_ImagenUsuario);
+        if ($resultado->rowCount() > 0) {
+            $oUsuario=self::validarUsuario($codUsuario, $password);       
         }
-
         return $oUsuario;
     }
-/**
- * Registro de una nueva conexión.
- * 
- * 
- * @param Usuario $codigoUsuario
- * @return Usuario
- */
+
     public static function registrarUltimaConexion($codigoUsuario) {
         $sUpdate = <<<QUERY
             UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,

@@ -1,25 +1,12 @@
 <?php
-/**
- * Class AppError
- *
- * Fichero con la clase AppError que nos servira para crear un objeto de la clase AppError
- *
- * PHP version 7.4
- */
 
-/**
- * Clase Error
- * 
- * Clase que crea y utiliza errores generados en el uso de la aplicación
- * 
+/*
  * @author: Aroa Granero Omañas
- * @package LoginLogout
- * @since: 21/01/2022
- * @version: 1.0 Realizacion de cError
- * @copyright: Copyright (c) 2022, Aroa Granero Omañas
+ * @version: v1
+ * Created on: 18/1/2022
+ * Last modification: 18/1/2022
  */
 class AppError{
-    
     private $codError;
     private $descError;
     private $archivoError;
@@ -33,6 +20,7 @@ class AppError{
         $this->lineaError = $lineaError;
         $this->paginaSiguiente = $paginaSiguiente;
     }
+    
     function getCodError() {
         return $this->codError;
     }

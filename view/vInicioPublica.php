@@ -12,6 +12,7 @@
     <br><br>
     <form method="Post">
         <input type='submit' name='iniciar' value='Iniciar sesión'/>
+        <input type='submit' name='registro' value='Registrarse'/>
     </form>
 </div>
 <div id="reloj"></div>

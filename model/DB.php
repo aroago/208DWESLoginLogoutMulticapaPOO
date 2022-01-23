@@ -1,29 +1,15 @@
 <?php
 
-/**
- * Class DB
- *
- * Fichero con la interfaz DB que contiene el modelo de los metodos de DBPDO
- *
- * PHP version 7.4
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
 /**
- * Interfaz para conexión con la base de datos y ejecución de consultas sobre la misma.
- * 
- * @author: Aroa Granero Omañas
- * @package LoginLogout
- * @since: 21/01/2022
- * @version: 1.0 Realizacion de DB
- * @copyright: Copyright (c) 2022, Aroa Granero Omañas
- * 
+ *
+ * @author daw2
  */
 interface DB {
-    /**
-     * Metodo ejecutarConsulta()
-     * 
-     * @param String $consulta
-     * @param Array|null $parametros Array|null $parametros Parámetros con los que completar la sentencia.
-     */
     public static function ejecutarConsulta($consulta, $parametros=null);
 }

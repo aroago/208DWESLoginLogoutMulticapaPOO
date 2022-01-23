@@ -224,3 +224,9 @@ input:focus{
     height: 20px;
     cursor: pointer;
 }
+
+#imagenUsuario{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+}
