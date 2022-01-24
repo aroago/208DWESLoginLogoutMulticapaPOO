@@ -19,7 +19,7 @@ include 'model/AppError.php';
 define("OBLIGATORIO", 1);
 define("OPCIONAL", 0);
 define("MIN_TAMANIO", 0);
-
+define("RUTA_IMG", "webroot/img/imagenUsuarios/");
 //Conexion con la base de datos.
 include 'config/configDB.php';
 
@@ -30,7 +30,8 @@ $aControladores = [
     'inicio' => 'controller/cInicioPrivada.php',
     'detalle' => 'controller/cDetalle.php',
     'WIP' => 'controller/cWIP.php',
-    'error' => 'controller/cError.php'
+    'error' => 'controller/cError.php',
+    'registro' => 'controller/cRegistro.php'
 ];
 
 //Array de las vistas
@@ -41,7 +42,8 @@ $aVistas = [
     'inicio' => 'view/vInicioPrivada.php',
     'detalle' => 'view/vDetalle.php',
     'WIP' => 'view/vWIP.php',
-    'error' => 'view/vError.php'
+    'error' => 'view/vError.php',
+    'registro'=> 'view/vRegistro.php'
 ];
 ?>
 

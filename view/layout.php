@@ -65,7 +65,7 @@
         </script>
     </head>
     <body>
-        <?php include_once $aVistas[$_SESSION['paginaEnCurso']]; //Requiere la vista indicada en el controlador correspondiente. ?>
+        <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; //Requiere la vista indicada en el controlador correspondiente. ?>
         <footer class="piepagina">
             <a href="https://github.com/aroago/208DWESLoginLogoutMulticapaPOO" target="_blank"><img src="./webroot/img/github.png" class="imagegithub" alt="IconoGitHub" /></a>
             <p><a>&copy;</a><a href="https://daw208.ieslossauces.es/">2021 Todos los derechos reservados AroaGO.</a> Fecha Modificación:20/01/2022</p> 

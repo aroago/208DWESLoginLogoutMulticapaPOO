@@ -8,6 +8,7 @@
  * */
 if (isset($_REQUEST['volver'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    unset($_SESSION['error']);
     header('location: ./index.php');
     exit;
 }

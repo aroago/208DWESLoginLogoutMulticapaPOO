@@ -33,6 +33,6 @@ if (isset($_REQUEST['saltarError'])) {
     $sentenciaSQL = 'SELECT * FROM XXX;';
     DBPDO::ejecutarConsulta($sentenciaSQL);
 }
-
 include $aVistas['layout'];
 ?>
+

@@ -13,6 +13,7 @@ class DBPDO implements DB{//clase para ejecucar consultas sql
  * @return type* devuelve el resultado de la consulta
  */
     public static function ejecutarConsulta($sentenciaSQL, $parametros=null) {
+       
         try {
             $miDB = new PDO(HOST, USER, PASSWORD); //Establezco la conexión a la base de datos instanciado un objeto PDO.
             $miDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Cuando se produce un error lanza una excepción utilizando PDOException.

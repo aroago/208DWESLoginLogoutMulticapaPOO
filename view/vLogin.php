@@ -12,6 +12,7 @@
         <input type="text" name="usuario" id="username"  placeholder="username">
         <input type="password" name="password" id="password" placeholder="password">
         <input type="submit" name="login" class="btnlogin" value="ENTRAR">
+        <input type="submit" name="registro" class="btnlogin" value="REGISTRATE">
     </form>
     
 </div>

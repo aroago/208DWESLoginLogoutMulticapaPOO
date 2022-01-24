@@ -29,8 +29,7 @@ class UsuarioPDO implements UsuarioDB {
         if (!$oUsuario) {
             return false;
         } else {
-            self::registrarUltimaConexion($codUsuario);
-            return new Usuario($oUsuario->T01_CodUsuario, $oUsuario->T01_Password, $oUsuario->T01_DescUsuario, $oUsuario->T01_NumConexiones, $oUsuario->T01_FechaHoraUltimaConexion, null, $oUsuario->T01_Perfil);
+            return new Usuario($oUsuario->T01_CodUsuario, $oUsuario->T01_Password, $oUsuario->T01_DescUsuario, $oUsuario->T01_NumConexiones, $oUsuario->T01_FechaHoraUltimaConexion, null, $oUsuario->T01_Perfil, $oUsuario->T01_ImagenUsuario);
         }
     }
 
@@ -41,15 +40,16 @@ class UsuarioPDO implements UsuarioDB {
      */
     public static function validarCodNoExiste($codUsuario) {
         $usuarioNoExiste = true;
-
+        
         $consulta = "Select * from T01_Usuario where T01_CodUsuario=?";
-        $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
-
+        $resultado = DBPDO::ejecutarConsulta($consulta,[$codUsuario]);
+        
         if ($resultado->rowCount() > 0) {
             $usuarioNoExiste = false;
         }
-
+        
         return $usuarioNoExiste;
+       
     }
 
     /**
@@ -62,20 +62,14 @@ class UsuarioPDO implements UsuarioDB {
      */
     public static function altaUsuario($codUsuario, $password, $descripcion) {
         $oUsuario = null;
-
+        
         $consulta = "Insert into T01_Usuario (T01_CodUsuario, T01_DescUsuario, T01_Password , T01_NumConexiones, T01_FechaHoraUltimaConexion) values (?,?,?,1,?)";
         $passwordEncriptado = hash("sha256", ($codUsuario . $password));
-        $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario, $descripcion, $passwordEncriptado, time()]);
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$codUsuario, $descripcion, $passwordEncriptado, time()]);
 
-
-        $consultaDatosUsuario = "Select * from T01_Usuario where T01_CodUsuario=?";
-        $resultadoDatosUsuario = DBPDO::ejecutaConsulta($consultaDatosUsuario, [$codUsuario]);
-
-        if ($resultadoDatosUsuario->rowCount() > 0) {
-            $oUsuarioConsulta = $resultadoDatosUsuario->fetchObject();
-            $oUsuario = new Usuario($oUsuarioConsulta->T01_CodUsuario, $oUsuarioConsulta->T01_Password, $oUsuarioConsulta->T01_DescUsuario, $oUsuarioConsulta->T01_NumConexiones, $oUsuarioConsulta->T01_FechaHoraUltimaConexion, $oUsuarioConsulta->T01_Perfil, $oUsuarioConsulta->T01_ImagenUsuario);
+        if ($resultado->rowCount() > 0) {
+            $oUsuario=self::validarUsuario($codUsuario, $password);       
         }
-
         return $oUsuario;
     }
 
